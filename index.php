@@ -11,6 +11,12 @@
         return $a+$b;
     }
 
-echo additionner(12,3),'<br/>';
-echo additionner('azerty',45),'<br/>';
-echo additionner(4,9);
+try //on va effetuer les instruction situer dans ce bloc
+{
+    echo additionner(12,3),'<br/>';
+    echo additionner('azerty', 45), '<br/>';
+    echo additionner(4,9);
+} catch (Exception $e)//on va attraper les exception 'Exception' sil y en a une qui est levée
+{
+
+}
