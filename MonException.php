@@ -1,7 +1,6 @@
 <?php
 
-//https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1667289-les-exceptions#/id/r-1670534
-
+//https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1667289-les-exceptions#/id/r-2649412
 
 function additionner($a,$b)
 {
@@ -11,7 +10,13 @@ function additionner($a,$b)
     }
     return $a+$b;
 }
+
+try {
     echo additionner(12,3) ,'<br/>';
     echo additionner('as',54),'<br/>';
+} finally {//ce bloc sera executer  quoi quil arrive
     echo additionner(4,5);
+}
+
+
 
