@@ -1,13 +1,17 @@
 <?php
 
-//https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1667289-les-exceptions#/id/r-1670526
+//https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1667289-les-exceptions#/id/r-1670534
 
-try {
-    $bd=new PDO('mysql:host=localhost;dbname=poo','root','');//tentative de connexion
-    echo 'Connexion reuissi !';//si la connexion a reuissi alors cette instruction sera executer
 
-}catch (PDOException $e) //Nous allons attraper l'exception s'il yen a une qui est leve
+function additionner($a,$b)
 {
-    echo 'La connexion a echouer <br/>';
-    echo 'Information : code de lerreur [',$e->getCode(),']<br/> Message derreur ', $e->getMessage(); //on affiche le message d'erreur grace a la methpode __toString que lon a ecrite
+    if (!is_numeric($a) || !is_numeric($b))
+    {   //on lance une exception "MonException"
+        throw  new InvalidArgumentException("Les deux parametre doivent etre des nombre ");
+    }
+    return $a+$b;
 }
+    echo additionner(12,3) ,'<br/>';
+    echo additionner('as',54),'<br/>';
+    echo additionner(4,5);
+
